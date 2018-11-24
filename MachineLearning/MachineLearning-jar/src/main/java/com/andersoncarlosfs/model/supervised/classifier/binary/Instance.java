@@ -36,6 +36,7 @@ public class Instance {
     }
 
     /**
+     * 
      * @return the features
      */
     public LinkedList<Double> getFeatures() {
@@ -43,6 +44,7 @@ public class Instance {
     }
 
     /**
+     * 
      * @return the label
      */
     public Double getLabel() {
