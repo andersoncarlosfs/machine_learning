@@ -23,7 +23,7 @@ public class Perceptron {
     /**
      *
      */
-    private Double learning_rate;
+    private Double learningRate;
     /**
      *
      */
@@ -34,8 +34,8 @@ public class Perceptron {
      * @param learning_rate
      * @param epochs
      */
-    public Perceptron(Double learning_rate, Integer epochs) {
-        this.learning_rate = learning_rate;
+    public Perceptron(Double learningRate, Integer epochs) {
+        this.learningRate = learningRate;
         this.epochs = epochs;
     }
 
@@ -63,10 +63,10 @@ public class Perceptron {
     }
 
     /**
-     * @return the learning_rate
+     * @return the learningRate
      */
-    public Double getLearning_rate() {
-        return learning_rate;
+    public Double getLearningRate() {
+        return learningRate;
     }
 
     /**
@@ -128,7 +128,7 @@ public class Perceptron {
     /**
      *
      * @param instances
-     * @param learning_rate
+     * @param learningRate
      * @param epochs
      * @return
      */
@@ -144,7 +144,7 @@ public class Perceptron {
             /**
              *
              */
-            Double squared_error = 0D;
+            Double squaredError = 0D;
 
             /**
              * Stochastic gradient descent
@@ -155,9 +155,9 @@ public class Perceptron {
                
                 final Double error = instance.getLabel() - prediction;
                 
-                final Double update = learning_rate * error;
+                final Double update = learningRate * error;
 
-                squared_error += Math.pow(error, 2);
+                squaredError += Math.pow(error, 2);
 
                 weights.set(0, weights.getFirst() + update);
              
@@ -171,7 +171,7 @@ public class Perceptron {
              *
              * Output the sum of the squared error
              */
-            System.out.println("epoch=" + i + "\tlearning rate=" + learning_rate + "\terror=" + squared_error);
+            System.out.println("epoch=" + i + "\tlearning rate=" + learningRate + "\terror=" + squaredError);
 
         }
 
@@ -184,7 +184,7 @@ public class Perceptron {
      * @return
      */
     public void train(LinkedList<Instance> instances) {
-        weights = train(instances, learning_rate, epochs);
+        weights = train(instances, learningRate, epochs);
     }
 
 }
